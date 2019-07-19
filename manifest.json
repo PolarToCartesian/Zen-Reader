@@ -4,10 +4,11 @@
 	"version": "0.5",
 	"content_scripts": [
 		{
-			"matches": [
-				"<all_urls>"
-			],
-			"css": ["style.css"]
+			"matches": ["<all_urls>"],
+			"css": ["content_css/general.css"]
+		}, {
+			"matches": ["https://*.google.com/*"],
+			"css": ["content_css/google.css"]
 		}
 	],
 	"icons": {

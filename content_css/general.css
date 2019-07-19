@@ -1,0 +1,17 @@
+*:not(body):not(header):not(nav):not([type="submit"]):not(a) {
+    color: inherit !important;
+    background-color: inherit !important;
+}
+
+a {
+    color: orange !important;
+}
+
+header, nav {
+    background-color: #212121 !important;
+}
+
+body {
+    background-color: rgb(50, 50, 50) !important;
+    color: white !important;
+}
