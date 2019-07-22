@@ -5,10 +5,14 @@
 	"content_scripts": [
 		{
 			"matches": ["<all_urls>"],
+			"js": ["content_js/articles.js"],
 			"css": ["content_css/general.css"]
 		}, {
-			"matches": ["https://*.google.com/*"],
+			"matches": ["https://*.google.com/*", "https://*.google.fr/*"],
 			"css": ["content_css/google.css"]
+		}, {
+			"matches": ["https://*.youtube.com/*"],
+			"css": ["content_css/youtube.css"]
 		}
 	],
 	"icons": {
