@@ -28,6 +28,7 @@ You can :
 + Links are distinguishable from other text
 + Navigation Menus Have A Different Background Color Than The Content
 + Popular Websites Receive Website Specific Support
++ Selectable font size
 
 ## Future Features
 
