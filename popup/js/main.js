@@ -8,34 +8,19 @@ function getStorage(keys) {
 
 function setStorage(key, value) { chrome.storage.sync.set({[key]: value}); }
 
+let currentFontSize = null;
+
 async function updatePopup() {
-    const storage = await getStorage(["language", "isActive"]);
+    const storage = await getStorage(["fontSize"]);
 
-    // Set Language selection background color
+    currentFontSize = storage.fontSize;
 
-    for (let element of document.getElementsByClassName("en-fr")) { 
-        element.style.backgroundColor = ""; 
-    }
-
-    document.getElementById(storage["language"]).style.backgroundColor = "green";
-
-    // On-Off
-
-    document.getElementById("on-off").innerHTML = (storage.isActive == true ? (storage["language"] == "en" ? "Desactivate" : "Désactiver") : (storage["language"] == "en" ? "Activate" : "Activer"));
-    document.getElementById("on-off").style.backgroundColor = (storage.isActive == true ? "red" : "green");
+    document.getElementById("fontSizeIndicator").innerHTML = storage.fontSize;
 }
 
 window.addEventListener("load", (event) => {
     updatePopup();
 
-    // Set Event Listeners
-
-    document.getElementById("en").addEventListener("click", () => {setStorage("language", "en"); updatePopup();});
-    document.getElementById("fr").addEventListener("click", () => {setStorage("language", "fr"); updatePopup();});
-    document.getElementById("on-off").addEventListener("click", async () => {
-        const storage = await getStorage(["isActive"]);
-        
-        setStorage("isActive", !storage.isActive);
-        updatePopup();
-    });
+    document.getElementById("fontSizeMinus").addEventListener("click", (event) => { setStorage("fontSize", currentFontSize-1); updatePopup(); });
+    document.getElementById("fontSizePlus").addEventListener("click",  (event) => { setStorage("fontSize", currentFontSize+1); updatePopup(); });
 });

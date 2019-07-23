@@ -31,8 +31,7 @@ You can :
 
 ## Future Features
 
-+ Article Formatting
-+ Text Enlargement
++ Better Article Formatting
 + More Website Specific Support
 + Firefox?
 + ...

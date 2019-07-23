@@ -17,3 +17,10 @@ div.ytp-hover-progress.ytp-hover-progress-light { background-color: white !impor
 div.ytp-gradient-top,
 div.ytp-gradient-bottom, 
 div.ytp-progress-bar-padding { display: none !important; }
+
+div#search-container { background-color: transparent !important; }
+
+input#search {
+    border: none !important;
+    border-radius: none !important;
+}
