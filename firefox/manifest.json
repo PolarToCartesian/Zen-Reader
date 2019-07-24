@@ -1,0 +1,25 @@
+{
+	"manifest_version": 2,
+	"name": "Easy Read",
+	"version": "0.25",
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"css": ["content_scripts/css/general.css"]
+		}, {
+			"matches": ["https://*.google.com/*", "https://*.google.fr/*"],
+			"css": ["content_scripts/css/google.css"]
+		}, {
+			"matches": ["https://*.youtube.com/*"],
+			"css": ["content_scripts/css/youtube.css"]
+		}
+	],
+	"icons": {
+		"128": "icons/icon128.png",
+		"48":  "icons/icon48.png",
+		"16":  "icons/icon16.png"
+	},
+	"permissions": [
+		"storage"
+	]
+}
