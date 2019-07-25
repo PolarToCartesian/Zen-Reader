@@ -1,10 +1,11 @@
 {
 	"manifest_version": 2,
 	"name": "Easy Read",
-	"version": "0.25",
+	"version": "0.45",
 	"content_scripts": [
 		{
 			"matches": ["<all_urls>"],
+			"js": ["content_scripts/js/fontScale.js"],
 			"css": ["content_scripts/css/general.css"]
 		}, {
 			"matches": ["https://*.google.com/*", "https://*.google.fr/*"],
@@ -14,10 +15,22 @@
 			"css": ["content_scripts/css/youtube.css"]
 		}
 	],
+	"background": {
+		"scripts": ["background_scripts/setDefaultStorage.js"]
+	},
 	"icons": {
 		"128": "icons/icon128.png",
 		"48":  "icons/icon48.png",
 		"16":  "icons/icon16.png"
+	},
+	"browser_action": {
+		"default_icon":  "icons/icon16.png",
+		"default_popup": "popup/index.html"
+	},
+	"applications": {
+		"gecko": {
+		  "id": "easy@read.ing"
+		}
 	},
 	"permissions": [
 		"storage"
