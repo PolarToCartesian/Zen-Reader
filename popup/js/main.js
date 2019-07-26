@@ -1,22 +1,12 @@
 function getStorage(keys) {
     return new Promise((resolve, reject) => {
-        const storage = browser.storage.local.get();
-
-        storage.then((storedSettings) => {
-            let result = {};
-
-            for (let key of keys) {
-                result[key] = storedSettings[key];
-            }
-
+        chrome.storage.sync.get(keys, (result) => {
             resolve(result);
-        }, (error) => { reject(error); });
+        });
     });
 }
 
-function setStorage(key, value) {
-    browser.storage.local.set({[key]: value});
-}
+function setStorage(key, value) { chrome.storage.sync.set({[key]: value}); }
 
 let currentFontSize = null;
 

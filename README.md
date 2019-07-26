@@ -1,6 +1,6 @@
 # Easy Read
 
-Have you ever found yourself zooming-ing to see better but you were still straining your eyes and you felt that the website was made even harder to use? If so, you know as well as I do that the web can be difficult to use if you have poor eyesight. In order to resolve this issue once and for all (I hope so), I have created a chrome extension that makes interfaces clearer to use, links distinguishable from other text, and increases the contrast between the background and the text without changing the appearence of images! You can download it now or wait until I publish it for free on the Chrome web store. Note that this extension only works on all chromium based browsers (Google Chrome, Opera, ..., and Microsoft Edge in the future). A test firefox version is available but it does not have an ajustable font size nor article formating nor GUI.
+Have you ever found yourself zooming-ing to see better but you were still straining your eyes and you felt that the website was made even harder to use? If so, you know as well as I do that the web can be difficult to use if you have poor eyesight. In order to resolve this issue once and for all (I hope so), I have created a chrome extension that makes interfaces clearer to use, links distinguishable from other text, and increases the contrast between the background and the text without changing the appearence of images! You can download it now or wait until I publish it for free on the Chrome web store. Note that this extension only works on all Chromimum based browsers (Google Chrome, Opera, ..., and Microsoft Edge in the future) and on Firefox.
 
 ## Download
 
@@ -30,6 +30,7 @@ Have you ever found yourself zooming-ing to see better but you were still strain
 
 ## Future Features
 
++ Article Formating in Firefox
 + Better Article Formatting
 + More Website Specific Support
 + Better Firefox version
