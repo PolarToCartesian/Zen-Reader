@@ -1,5 +1,7 @@
-chrome.storage.sync.get(["fontSize"], (storage) => {
-    if (!storage.fontSize) {
-        chrome.storage.sync.set({ "fontSize": 19 });
+async function setDefaultStorage() {
+    if(await getStorageItems(["fontSize"]).fontSize == undefined) {
+        setStorageItem("fontSize", 19);
     }
-});
+}
+
+setDefaultStorage();

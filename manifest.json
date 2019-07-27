@@ -1,11 +1,16 @@
 {
 	"manifest_version": 2,
 	"name": "Easy Read",
-	"version": "0.45",
+	"version": "0.6",
 	"content_scripts": [
 		{
 			"matches": ["<all_urls>"],
-			"js": ["content_scripts/js/articleFormat.js", "content_scripts/js/fontScale.js"],
+			"js": [
+				"browser_compatibility_api/messaging.js",
+				"browser_compatibility_api/storage.js",
+				"content_scripts/js/articleFormat.js",
+				"content_scripts/js/fontScale.js"
+			],
 			"css": ["content_scripts/css/general.css"]
 		}, {
 			"matches": ["https://*.google.com/*", "https://*.google.fr/*"],
@@ -16,7 +21,13 @@
 		}
 	],
 	"background": {
-		"scripts": ["background_scripts/contextMenus.js", "background_scripts/setDefaultStorage.js"]
+		"scripts": [
+			"browser_compatibility_api/contextMenus.js",
+			"browser_compatibility_api/messaging.js",
+			"browser_compatibility_api/storage.js",
+			"background_scripts/setDefaultStorage.js",
+			"background_scripts/contextMenus.js"
+		]
 	},
 	"icons": {
 		"128": "icons/icon128.png",
