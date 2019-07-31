@@ -6,8 +6,7 @@
 		{
 			"matches": ["<all_urls>"],
 			"js": [
-				"browser_compatibility_api/messaging.js",
-				"browser_compatibility_api/storage.js",
+				"other/browser_compatibility_api.js",
 				"content_scripts/js/articleFormat.js",
 				"content_scripts/js/fontScale.js"
 			],
@@ -22,9 +21,7 @@
 	],
 	"background": {
 		"scripts": [
-			"browser_compatibility_api/contextMenus.js",
-			"browser_compatibility_api/messaging.js",
-			"browser_compatibility_api/storage.js",
+			"other/browser_compatibility_api.js",
 			"background_scripts/setDefaultStorage.js",
 			"background_scripts/contextMenus.js"
 		]

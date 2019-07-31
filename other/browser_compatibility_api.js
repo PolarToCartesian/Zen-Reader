@@ -1,5 +1,14 @@
+const firefox  = (typeof browser != "undefined");
+const chromium = !firefox;
+
+let extension_api = firefox ? browser : chrome;
+
+function createContextMenuItem(params) {
+    extension_api.contextMenus.create(params);
+}
+
 function sendMessageToCurrentTab(message) {
-    if (typeof browser != 'undefined') { // Firefox
+    if (firefox) {
         browser.tabs.query({
             currentWindow: true,
             active: true
@@ -21,7 +30,7 @@ function sendMessageToCurrentTab(message) {
 }
 
 function executeOnMessage(message_to_exec_on, response, callback) {
-    if (typeof browser != 'undefined') { // Firefox
+    if (extension_api) {
         browser.runtime.onMessage.addListener(request => {
             if (request.greeting == message_to_exec_on) {
                 callback();
@@ -37,4 +46,20 @@ function executeOnMessage(message_to_exec_on, response, callback) {
             sendResponse(response);
         });
     }
+}
+
+function getStorageItems(keys) {
+    return new Promise((resolve, reject) => {        
+        extension_api.storage.sync.get(keys, (storage) => {
+            resolve(storage);
+        });
+    });
+}
+
+function setStorageItems(keyValuePairs) {
+    extension_api.storage.sync.set(keyValuePairs);
+}
+
+function setStorageItem(key, value) {
+    setStorageItems({ [key]: value });
 }
