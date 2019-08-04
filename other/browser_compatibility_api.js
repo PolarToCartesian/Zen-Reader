@@ -19,7 +19,7 @@ function sendMessageToCurrentTab(message) {
                   {greeting: message}
                 ).then(response => {}).catch((error) => {console.error(`Error: ${error}`);});
               }
-        }).catch(onError);
+        }).catch((error) => {console.error(error);});
     } else { // Chromium
         chrome.tabs.query({active: true, currentWindow: true}, 
             (tabs) => {

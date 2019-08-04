@@ -19,10 +19,10 @@ Have you ever found yourself zooming-ing to see better but you were still strain
 + Popular Websites Receive Website Specific Support
 + Selectable font size
 + Works On Chromium Browsers and Firefox
++ Article Formating
 
 ## Future Features
 
-+ Better Article Formatting
-+ More Website Specific Support
++ More Website Specific Support (css and article formating)
 + Better Icons
 + ...
