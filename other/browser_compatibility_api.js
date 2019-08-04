@@ -30,7 +30,7 @@ function sendMessageToCurrentTab(message) {
 }
 
 function executeOnMessage(message_to_exec_on, response, callback) {
-    if (extension_api) {
+    if (firefox) {
         browser.runtime.onMessage.addListener(request => {
             if (request.greeting == message_to_exec_on) {
                 callback();
