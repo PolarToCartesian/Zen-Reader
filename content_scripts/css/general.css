@@ -3,14 +3,14 @@
     text-decoration: none !important;
 }
 
-*:not(body):not(header):not(nav):not(input):not(button):not(a):not(svg):not(img) {
+*:not(body):not(header):not(nav):not(footer):not(input):not(button):not(a):not(svg):not(img) {
     color: inherit !important;
     background-color: inherit !important;
 }
 
 a { color: orange !important; }
 
-header, nav, body, input:not([type="submit"]) { 
+header, nav, footer, body, input:not([type="submit"]) { 
     color: #FFFFFFFF !important; 
 }
 
@@ -20,13 +20,13 @@ input:not([type="submit"]) {
     background-color: inherit !important;
 }
 
-header, nav {
-    background-color: #212121 !important;
+header, nav, footer {
+    background-color: rgb(57,56,62) !important;
     font-weight: bolder !important;
 }
 
 body { 
-    background-color: #323232 !important; 
+    background-color: rgb(42,41,46) !important; 
     font-weight: normal !important;
 }
 

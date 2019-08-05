@@ -23,7 +23,8 @@
 		"scripts": [
 			"other/browser_compatibility_api.js",
 			"background_scripts/setDefaultStorage.js",
-			"background_scripts/contextMenus.js"
+			"background_scripts/contextMenus.js",
+			"background_scripts/onInstall.js"
 		]
 	},
 	"icons": {
@@ -37,7 +38,7 @@
 	},
 	"applications": {
 		"gecko": {
-		  "id": "easy@read.ing"
+		  "id": "zen@read.er"
 		}
 	},
 	"permissions": [

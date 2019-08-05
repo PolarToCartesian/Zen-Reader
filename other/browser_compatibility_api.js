@@ -63,3 +63,13 @@ function setStorageItems(keyValuePairs) {
 function setStorageItem(key, value) {
     setStorageItems({ [key]: value });
 }
+
+function openTab(url) {
+    extension_api.tabs.create({url: url}, (tab) => { return tab; });
+}
+
+function execOnInstall(callback) {
+    extension_api.runtime.onInstalled.addListener((event) => {
+        callback();
+    });
+}

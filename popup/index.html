@@ -5,21 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../content_scripts/css/general.css">
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="../other/browser_compatibility_api.js"></script>
-    <title>Popup</title>
+    <title>Zen Reader Popup</title>
 </head>
 <body>
     <header>
-        <div class="top-bottom" style="height: 30px; font-size: 20px;">Easy Read</div>
-        <div class="top-bottom" style="height: 20px;"><a href="https://github.com/PolarToCartesian/">By PolarToCartesian</a></div>
+        <img src="../icons/icon128.png" alt="Zen Reader Icon"></img>
+        <span>
+            <span>Zen Reader</span> by <a href="https://github.com/PolarToCartesian/Zen-Reader">PolarToCartesian</a></span>
     </header>
-    <main>
-        <section id="fontSize">
-            <button class="selector" id="fontSizeMinus"><</button>
-            <span   class="selector" id="fontSizeIndicator"></span>
-            <button class="selector" id="fontSizePlus">></button>
-        </section>
-    </main>
+    
+    <button id="formatArticle">Format Article</button>
+    
+    <section id="fontSize">
+        <button id="fontSizeMinus"><</button>
+        <span   id="fontSizeIndicator"></span>
+        <button id="fontSizePlus">></button>
+    </section>
+
+    <footer>
+        <a href="https://github.com/PolarToCartesian/Zen-Reader">PolarToCartesian On Github</a>
+    </footer>
 </body>
 </html>

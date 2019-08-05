@@ -11,6 +11,10 @@ async function updatePopup() {
 window.addEventListener("load", (event) => {
     updatePopup();
 
+    document.getElementById("formatArticle").addEventListener("click", (event) => {
+        sendMessageToCurrentTab("Format Article");
+    });
+
     document.getElementById("fontSizeMinus").addEventListener("click", (event) => { setStorageItem("fontSize", currentFontSize-1); updatePopup(); });
     document.getElementById("fontSizePlus").addEventListener("click",  (event) => { setStorageItem("fontSize", currentFontSize+1); updatePopup(); });
 });

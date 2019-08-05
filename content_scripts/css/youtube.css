@@ -4,7 +4,7 @@ div#iv-drawer.iv-drawer,
 div.ytp-popup.ytp-settings-menu,
 div#masthead-container.style-scope.ytd-app,
 div#guide-inner-content.style-scope.ytd-app,
-div.ytp-chrome-top.ytp-share-button-visible { background-color: #212121 !important; }
+div.ytp-chrome-top.ytp-share-button-visible { background-color: rgb(57,56,62) !important; }
 
 div.ytp-scrubber-container,
 div.ytp-play-progress.ytp-swatch-background-color { background-color: red !important; }

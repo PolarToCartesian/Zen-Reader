@@ -49,10 +49,10 @@ async function formatArticle() {
         document.body.setAttribute("style", "padding: 0px; margin: 0px;");
         document.body.innerHTML = `
             <article style="width: 100%;">
-                <header style="width: 100%; float: left; background-color: #212121 !important;">
+                <header style="width: 100%; float: left;">
                     <div style="width: 100%; float: left;">
                         <div style="font-size: ` + fontSize + `px !important; width: 33.33%; float: left; text-align: center;"><a href="`+ parsedArticle.source +`">` + parsedArticle.source + `</a></div>
-                        <div style="font-size: ` + fontSize + `px !important; width: 33.33%; float: middle; text-align: center;">` + parsedArticle.author + `</div>
+                        <div style="font-size: ` + fontSize + `px !important; width: 33.33%; float: left; text-align: center;">` + parsedArticle.author + `</div>
                         <div style="font-size: ` + fontSize + `px !important; width: 33.33%; float: right; text-align: center;">` + parsedArticle.date_time + `</div>
                     </div>
                     <div style="width: 100%; float: left; text-align: center; font-size: ` + (fontSize * 1.5) + `px !important; font-weight: bolder !important;">` + parsedArticle.title + `</div>
