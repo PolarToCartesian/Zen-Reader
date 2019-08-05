@@ -46,34 +46,38 @@ async function formatArticle() {
 
         document.head.innerHTML = "<title>" + parsedArticle.title + "</title>";
 
-        document.body.setAttribute("style", "padding: 0px; margin: 0px;");
+        document.body.setAttribute("style", "padding: 0px; margin: 0px; background-color: #171717 !important;");
         document.body.innerHTML = `
-            <article style="width: 100%;">
-                <header style="width: 100%; float: left;">
-                    <div style="width: 100%; float: left;">
-                        <div style="font-size: ` + fontSize + `px !important; width: 33.33%; float: left; text-align: center;"><a href="`+ parsedArticle.source +`">` + parsedArticle.source + `</a></div>
-                        <div style="font-size: ` + fontSize + `px !important; width: 33.33%; float: left; text-align: center;">` + parsedArticle.author + `</div>
-                        <div style="font-size: ` + fontSize + `px !important; width: 33.33%; float: right; text-align: center;">` + parsedArticle.date_time + `</div>
+            <article style="max-width: 900px; margin: 0px auto; margin-top: 100px; background-color: #272727 !important;">
+                <div style="max-width: 700px; margin: 0px auto; padding-top: 75px;">
+                    <div style="width: 100%; font-size: 15px !important; overflow: hidden;">
+                        <a    style="line-height: 20px; width: 33.33%; float: left; text-align: center !important;" href="` + parsedArticle.source + `">` + parsedArticle.source + `</a>
+                        <span style="line-height: 20px; width: 33.33%; float: left; text-align: center !important;">` + parsedArticle.date_time + `</span>
+                        <span style="line-height: 20px; width: 33.33%; float: left; text-align: center !important;">` + parsedArticle.author + `</span>
                     </div>
-                    <div style="width: 100%; float: left; text-align: center; font-size: ` + (fontSize * 1.5) + `px !important; font-weight: bolder !important;">` + parsedArticle.title + `</div>
-                    <div style="border-bottom: 3px solid white; width: 100%; float: left; text-align: center; font-size: ` + (fontSize * 1.25) + `px !important; font-weight: normal !important; color: #ecf0f1 !important;">` + parsedArticle.description + `</div>
-                </header>
 
-                <main style="width: 75vw; height: auto; margin: 0px auto; font-size: ` + fontSize * 1.25 + `px !important; text-align: justify !important;">
-                    ` + parsedArticle.content + `
-                </main>
+                    <div style="padding-top: 10px; text-align: justify; font-size: 44px !important; color: white; font-weight: bolder;">` + parsedArticle.title + `</div>
+                
+                    <div style="font-size: ` + fontSize + `px !important; text-align: justify;" id="content">` + parsedArticle.content + `</div>
+                </div>
             </article>
         `;
 
-        for (let element of document.body.getElementsByTagName("main")[0].getElementsByTagName("*")) {
-            element.setAttribute("style", "");
-            element.setAttribute("class", "");
-            element.setAttribute("id", "");
+        if (document.body.getElementsByTagName("main").length > 0) {
+            for (let element of document.body.getElementsByTagName("main")[0].getElementsByTagName("*")) {
+                element.setAttribute("style", "");
+                element.setAttribute("class", "");
+                element.setAttribute("id", "");
+            }
         }
 
         for (let element of document.querySelectorAll("figure,img,figcaption")) {
             element.style.margin = "0px auto";
             element.style.textAlign = "center";
+        }
+
+        for (let element of document.getElementById("content").getElementsByTagName("*")) {
+            element.setAttribute("style", "margin: 0px !important; padding: 0px !important;");
         }
     }
 }
