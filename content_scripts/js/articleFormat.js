@@ -48,8 +48,8 @@ async function formatArticle() {
 
         document.body.setAttribute("style", "padding: 0px; margin: 0px; background-color: #171717 !important;");
         document.body.innerHTML = `
-            <article style="max-width: 900px; margin: 0px auto; margin-top: 100px; background-color: #272727 !important;">
-                <div style="max-width: 700px; margin: 0px auto; padding-top: 75px;">
+            <article style="max-width: 900px; margin: 0px auto; margin-top: 100px; margin-bottom: 100px; background-color: #272727 !important;">
+                <div style="max-width: 700px; margin: 0px auto; padding-top: 75px; padding-bottom: 75px;">
                     <div style="width: 100%; font-size: 15px !important; overflow: hidden;">
                         <a    style="line-height: 20px; width: 33.33%; float: left; text-align: center !important;" href="` + parsedArticle.source + `">` + parsedArticle.source + `</a>
                         <span style="line-height: 20px; width: 33.33%; float: left; text-align: center !important;">` + parsedArticle.date_time + `</span>
@@ -58,7 +58,7 @@ async function formatArticle() {
 
                     <div style="padding-top: 10px; text-align: justify; font-size: 44px !important; color: white; font-weight: bolder;">` + parsedArticle.title + `</div>
                 
-                    <div style="font-size: ` + fontSize + `px !important; text-align: justify;" id="content">` + parsedArticle.content + `</div>
+                    <div style="font-size: ` + fontSize + `px !important; text-align: justify; padding-top: 30px;" id="content">` + parsedArticle.content + `</div>
                 </div>
             </article>
         `;
@@ -78,6 +78,28 @@ async function formatArticle() {
 
         for (let element of document.getElementById("content").getElementsByTagName("*")) {
             element.setAttribute("style", "margin: 0px !important; padding: 0px !important;");
+
+            switch (element.tagName) {
+                case "IMG":
+                    element.setAttribute("style", "margin: 0px !important; padding: 0px !important; width: 100%;");
+                    break;
+                
+                case "FIGCAPTION":
+                    element.setAttribute("style", "margin: 0px !important; padding: 0px !important; color: rgb(189, 195, 199) !important;");
+                    break;
+                
+                case "FIGURE":
+                    element.setAttribute("style", "margin: 0px !important; padding: 0px !important; margin-top: 15px !important; margin-bottom: 15px !important;");
+                    break;
+            }
+
+            if (element.tagName == "IMG") {
+                element.setAttribute("style", "margin: 0px !important; padding: 0px !important; width: 100%;");
+            } else if (element.tagName == "FIGCAPTION") {
+                element.setAttribute("style", "margin: 0px !important; padding: 0px !important; color: rgb(189, 195, 199) !important;");
+            } else if (element.tagName == "FIGURE") {
+                element.setAttribute("style", "margin: 0px !important; padding: 0px !important; margin-top: 15px !important; margin-bottom: 15px !important;");
+            }
         }
     }
 }

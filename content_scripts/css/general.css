@@ -1,3 +1,10 @@
+:root {
+    --bg-color-header: rgb(57,56,62);
+    --bg-color-content: rgb(42,41,46);
+    --text-color: rgb(255, 255, 255);
+    --link-color: rgb(255, 165, 0);
+}
+
 * {
     font-style: normal !important;
     text-decoration: none !important;
@@ -8,10 +15,12 @@
     background-color: inherit !important;
 }
 
-a { color: orange !important; }
+a {
+    color: var(--link-color) !important;
+}
 
 header, nav, footer, body, input:not([type="submit"]) { 
-    color: #FFFFFFFF !important; 
+    color: var(--text-color) !important; 
 }
 
 input:not([type="submit"]) {
@@ -21,12 +30,12 @@ input:not([type="submit"]) {
 }
 
 header, nav, footer {
-    background-color: rgb(57,56,62) !important;
+    background-color: var(--bg-color-header) !important;
     font-weight: bolder !important;
 }
 
 body { 
-    background-color: rgb(42,41,46) !important; 
+    background-color: var(--bg-color-content) !important; 
     font-weight: normal !important;
 }
 
