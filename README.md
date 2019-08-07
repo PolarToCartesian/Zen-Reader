@@ -24,6 +24,4 @@ Have you ever found yourself zooming-ing to see better but you were still strain
 
 ## Future Features
 
-+ More Website Specific Support (css and article formating)
-+ Better Icons
-+ ...
++ ?
