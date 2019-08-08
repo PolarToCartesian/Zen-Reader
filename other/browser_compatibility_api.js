@@ -7,6 +7,14 @@ function createContextMenuItem(params) {
     extension_api.contextMenus.create(params);
 }
 
+function execWhenContextMenuItemIsClicked(contextMenuItemId, callback) {
+    extension_api.contextMenus.onClicked.addListener((data) => {
+        if (data.menuItemId == contextMenuItemId) {
+            callback();
+        }
+    });
+}
+
 function sendMessageToCurrentTab(message) {
     if (firefox) {
         browser.tabs.query({
@@ -64,6 +72,16 @@ function setStorageItem(key, value) {
     setStorageItems({ [key]: value });
 }
 
+function execOnStorageValueChange(key, callback) {
+    extension_api.storage.onChanged.addListener((changes, namespace) => {
+        const index = Object.keys(changes).findIndex((testKey) => { return testKey == key; });
+
+        if (index != -1) {
+            callback(changes[key]);
+        }
+    });
+}
+
 function openTab(url) {
     extension_api.tabs.create({url: url}, (tab) => { return tab; });
 }
@@ -71,5 +89,23 @@ function openTab(url) {
 function execOnInstall(callback) {
     extension_api.runtime.onInstalled.addListener((event) => {
         callback();
+    });
+}
+
+function getUrlOfFileInExtension(path) {
+    return extension_api.runtime.getURL(path);
+}
+
+function readFileInExtension(path) {
+    const url = getUrlOfFileInExtension(path);
+
+    return new Promise((resolve, reject) => {
+        fetch(url)
+            .then((response) => { 
+                if (response.status == 200) return response.text();
+
+                reject(response.statusText);
+            })
+            .then((fileContents) => { resolve(fileContents); });
     });
 }

@@ -1,9 +1,9 @@
 {
 	"manifest_version": 2,
 	"name": "Zen Reader",
-	"version": "1.0",
+	"version": "1.5",
 	"author": "PolarToCartesian",
-	"description": "Zen Reader is a free and open source chrome and firefox extension which changes the appearance of the web in order to make it more accesible.",
+	"description": "Zen Reader is a free and open source browser extension which makes the web more accesible.",
 	"homepage_url": "https://github.com/PolarToCartesian/Zen-Reader",
 	"content_scripts": [
 		{
@@ -23,12 +23,7 @@
 		}
 	],
 	"background": {
-		"scripts": [
-			"other/browser_compatibility_api.js",
-			"background_scripts/setDefaultStorage.js",
-			"background_scripts/contextMenus.js",
-			"background_scripts/onInstall.js"
-		]
+		"page": "background_scripts/index.html"
 	},
 	"icons": {
 		"128": "icons/icon128.png",
@@ -44,7 +39,9 @@
 		  "id": "zen@read.er"
 		}
 	},
+	"content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
 	"permissions": [
+		"activeTab",
 		"contextMenus",
 		"storage"
 	]
