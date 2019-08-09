@@ -4,21 +4,33 @@ div#iv-drawer.iv-drawer,
 div.ytp-popup.ytp-settings-menu,
 div#masthead-container.style-scope.ytd-app,
 div#guide-inner-content.style-scope.ytd-app,
-div.ytp-chrome-top.ytp-share-button-visible { background-color: var(--bg-color-header) !important; }
+div.ytp-chrome-top.ytp-share-button-visible {
+    background-color: var(--bg-color-header) !important;
+}
 
 div.ytp-scrubber-container,
-div.ytp-play-progress.ytp-swatch-background-color { background-color: red !important; }
+div.ytp-play-progress.ytp-swatch-background-color {
+    background-color: red !important;
+}
 
-div.ytp-scrubber-container { border-radius: 30px !important; }
+div.ytp-scrubber-container {
+    border-radius: 30px !important;
+}
 
 div.ytp-load-progress,
-div.ytp-hover-progress.ytp-hover-progress-light { background-color: white !important; }
+div.ytp-hover-progress.ytp-hover-progress-light {
+    background-color: white !important;
+}
 
 div.ytp-gradient-top,
 div.ytp-gradient-bottom, 
-div.ytp-progress-bar-padding { display: none !important; }
+div.ytp-progress-bar-padding {
+    display: none !important;
+}
 
-div#search-container { background-color: transparent !important; }
+div#search-container {
+    background-color: transparent !important;
+}
 
 input#search {
     border: none !important;

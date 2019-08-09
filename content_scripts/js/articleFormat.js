@@ -5,8 +5,18 @@ function parseArticle(article) {
         description: "",
         author: "",
         date_time: "",
-        content: ""
+        content: "",
+        icon_url: ""
     };
+
+    for (let element of document.head.getElementsByTagName("*")) {
+        if (element.tagName == "LINK") {
+            if (element.getAttribute("rel") == "icon" || element.getAttribute("rel") == "shortcut icon") {
+                result.icon_url = element.getAttribute("href");
+                break;
+            }
+        }
+    }
 
     for (let element of article.getElementsByTagName("*")) {
         // Can't use "element.className.toLowerCase();" because of svg elements
@@ -65,9 +75,12 @@ function createWebpage(parsedArticle, fontSize) {
         <article style="max-width: 900px; margin: 0px auto; margin-top: 100px; margin-bottom: 100px; background-color: #272727 !important;">
             <div style="max-width: 700px; margin: 0px auto; padding-top: 75px; padding-bottom: 75px;">
                 <div style="width: 100%; font-size: 15px !important; overflow: hidden;">
-                    <a    style="line-height: 20px; width: 33.33%; float: left; text-align: center !important;" href="${parsedArticle.source}">${parsedArticle.source}</a>
-                    <span style="line-height: 20px; width: 33.33%; float: left; text-align: center !important;">${parsedArticle.date_time}</span>
-                    <span style="line-height: 20px; width: 33.33%; float: left; text-align: center !important;">${parsedArticle.author}</span>
+                    <a    style="line-height: 15px; width: 33.33%; float: left; text-align: center !important;" href="${parsedArticle.source}">
+                        <img src="${parsedArticle.icon_url}" style="vertical-align: middle;" width="15" height="15">
+                        ${parsedArticle.source}
+                    </a>
+                    <span style="line-height: 15px; width: 33.33%; float: left; text-align: center !important;">${parsedArticle.date_time}</span>
+                    <span style="line-height: 15px; width: 33.33%; float: left; text-align: center !important;">${parsedArticle.author}</span>
                 </div>
 
                 <div style="padding-top: 10px; text-align: justify; font-size: 44px !important; color: white; font-weight: bolder;">${parsedArticle.title}</div>
@@ -88,15 +101,7 @@ function addExtraStylingToWebpage() {
         if (element.tagName == "FIGURE" || element.tagName == "IFRAME") {
             element.setAttribute("style", `${baseStyle} margin-top: 15px !important; margin-bottom: 15px !important;`);
         } else if (element.tagName == "IMG") {
-            const oldImageWidth = element.width, oldImageHeight = element.height;
-            
-            element.setAttribute("style", `${baseStyle} margin-top: 15px !important; margin-bottom: 15px !important;`);
-
-            // Scale The Image
-            const newImageWidth  = element.width;
-            const newImageHeight = (newImageWidth * oldImageHeight) / oldImageWidth;
-
-            element.setAttribute("style", `${baseStyle} height: ${newImageHeight}px !important; margin-top: 15px !important; margin-bottom: 15px !important;`);
+            element.setAttribute("style", `${baseStyle} height: 100% !important; width: 100%; object-fit: contain; margin-top: 15px !important; margin-bottom: 15px !important;`);
         } else if (element.tagName == "FIGCAPTION") {
             element.setAttribute("style", `${baseStyle} color: rgb(189, 195, 199) !important;`);
         } else {

@@ -1,11 +1,6 @@
-/*
-For Any Google Website 
-
-For Now : Search, Drive
-
-*/
-
-.RNNXgb { border: none !important; }
+.RNNXgb {
+    border: none !important;
+}
 
 input[type="text"] {
     border-radius: 25px !important;
@@ -13,7 +8,9 @@ input[type="text"] {
     text-indent: 10px !important;
 }
 
-a.gb_z.gb_pc { background-color: orange !important; }
+a.gb_z.gb_pc { 
+    background-color: orange !important;
+}
 
 div#top_nav,
 div#footcnt,
@@ -30,12 +27,26 @@ div.a-s-tb-sc-Ja-Q.a-s-tb-sc-Ja-Q-Nm.a-s-tb-Kg-Q.a-s-tb-kl-Gd-ig {
     background-color: var(--bg-color-header) !important;
 }
 
-div.gb_Pf#gb { top: 0px !important; }
+div.gb_Pf#gb {
+    top: 0px !important;
+}
 
-span.z1asCe.MZy1Rb > svg { fill: #4285f4 !important; }
+span.z1asCe.MZy1Rb > svg {
+    fill: #4285f4 !important;
+}
 
-div.zloOqf.PZPZlf.kno-fb-ctx > span.w8qArf > a.fl { color: orange !important; }
+div.zloOqf.PZPZlf.kno-fb-ctx > span.w8qArf > a.fl {
+    color: orange !important;
+}
 
-div.uw8t2 { background-color: transparent !important; }
+div.uw8t2 { 
+    background-color: transparent !important;
+}
 
-div.gb_y.gb_dd.gb_g { background-color: #FFFFFF !important; }
+div.gb_y.gb_dd.gb_g, a.gb_z.gb_rc {
+    background-color: #FFFFFF !important;
+}
+
+div.RNNXgb > div.cafKYd {
+    margin-left: 10px !important;
+}
