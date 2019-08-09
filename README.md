@@ -1,6 +1,8 @@
 # Zen Reader
 
-Have you ever found yourself zooming-ing to see better but you were still straining your eyes and you felt that the website was made even harder to use? If so, you know as well as I do that the web can be difficult to use if you have poor eyesight. In order to resolve this issue once and for all (I hope so), I have created a chrome extension that makes interfaces clearer to use, links distinguishable from other text, and increases the contrast between the background and the text without changing the appearence of images! This extension works for all Chromium browsers (Google Chrome, Opera, ..., and Microsoft Edge in the future) as well as Firefox!
+"Making the web accessible to the visually impaired"
+
+Have you ever found yourself zooming-ing to see better but you were still straining your eyes? If so, you know as well as I do that the web can be difficult to use if you have poor eyesight. This extension, which is works on firefox and chromium browsers attempts to resolve this issue.
 
 ## Download
 
@@ -8,21 +10,19 @@ Chrome : Coming Soon (Waiting For Verification By Chrome)
 
 Firefox : Coming Soon
 
+## Current Features
+
++ "Dark Theme" on every website to increase contrast and readability
+  + Navigational elements and content have different background colors
++ An adjustable font size
++ Simplistic article formatting
++ Orange links to make them distinguishable from other text
++ Popular websites receive personal support
++ Images are kept as is
+
 ## Contribute
 
 + Make a fork the repository
 + Make a poll request
 + Open an issue
-* You will be credited for your code and/or feature contribution(s).
-
-## Current Features / Additions
-
-+ Increased Contrast Between The Background And Text
-+ Images Are Kept As Is
-+ Links Are Distinguishable From Other Text
-+ Navigation Menus Have A Different Background Color Than The Content
-+ Popular Websites Receive Website Specific Support
-+ Selectable Font Size
-+ Works On Chromium Browsers And Firefox
-+ Article Formating
-+ Better GUI
++ You will be credited for your code and/or feature contribution(s).
