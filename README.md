@@ -5,6 +5,7 @@ Have you ever found yourself zooming-ing to see better but you were still strain
 ## Download
 
 Chrome : Coming Soon (Waiting For Verification By Chrome)
+
 Firefox : Coming Soon
 
 ## Contribute
