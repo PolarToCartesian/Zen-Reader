@@ -30,7 +30,7 @@ function parseArticle(article) {
                 if (window.location.hostname == "www.theverge.com" && element.id.indexOf("heading-label") != -1) {
                     continue;
                 }
-    
+
                 result.title = element.innerText;
             } else if (result.description == "" && (classNames.includes("desc") || classNames.includes("summary"))) {
                 result.description = element.innerText;
@@ -68,27 +68,39 @@ function getLargestArticle() {
 }
 
 function createWebpage(parsedArticle, fontSize) {
-    document.head.innerHTML = `<title>${parsedArticle.title}</title>`;
-
-    document.body.setAttribute("style", "padding: 0px; margin: 0px; background-color: #171717 !important;");
+    document.body.setAttribute("style", "padding: 0px; margin: 0px;");
     document.body.innerHTML = `
-        <article style="max-width: 900px; margin: 0px auto; margin-top: 100px; margin-bottom: 100px; background-color: #272727 !important;">
+        <article style="max-width: 900px; margin: 0px auto; margin-top: 100px; margin-bottom: 100px; border: 3px solid white !important;">
             <div style="max-width: 700px; margin: 0px auto; padding-top: 75px; padding-bottom: 75px;">
-                <div style="width: 100%; font-size: 15px !important; overflow: hidden;">
-                    <a    style="line-height: 15px; width: 33.33%; float: left; text-align: center !important;" href="${parsedArticle.source}">
-                        <img src="${parsedArticle.icon_url}" style="vertical-align: middle;" width="15" height="15">
-                        ${parsedArticle.source}
-                    </a>
-                    <span style="line-height: 15px; width: 33.33%; float: left; text-align: center !important;">${parsedArticle.date_time}</span>
-                    <span style="line-height: 15px; width: 33.33%; float: left; text-align: center !important;">${parsedArticle.author}</span>
-                </div>
+                    <div style="width: 100%; font-size: 15px !important; overflow: hidden;">
+                        <a    style="line-height: 15px; width: 33.33%; float: left; text-align: center !important;" href="${parsedArticle.source}">
+                            <img src="${parsedArticle.icon_url}" style="vertical-align: middle;" width="15" height="15">
+                            ${parsedArticle.source}
+                        </a>
+                        <span style="line-height: 15px; width: 33.33%; float: left; text-align: center !important;">${parsedArticle.date_time}</span>
+                        <span style="line-height: 15px; width: 33.33%; float: left; text-align: center !important;">${parsedArticle.author}</span>
+                    </div>
 
-                <div style="padding-top: 10px; text-align: justify; font-size: 44px !important; color: white; font-weight: bolder;">${parsedArticle.title}</div>
-                
+                    <div style="padding-top: 10px; text-align: justify; font-size: 44px !important; font-weight: bolder;">${parsedArticle.title}</div>
+
                 <div style="font-size: ${fontSize}px !important; text-align: justify; padding-top: 30px;" id="zen-reader-content">${parsedArticle.content}</div>
             </div>
         </article>
     `;
+
+    async function addFiles() {
+        document.head.innerHTML = `<title>${parsedArticle.title}</title>`;
+
+        const addCssVariablesJSContents = await readFileInExtension("content_scripts/js/addCssVariables.js");
+
+        eval(addCssVariablesJSContents);
+
+        const addGeneralCssContents = await readFileInExtension("content_scripts/css/general.css");
+
+        document.head.innerHTML += `<style type="text/css">${addGeneralCssContents}</style>`;
+    }
+
+    addFiles();
 }
 
 function addExtraStylingToWebpage() {

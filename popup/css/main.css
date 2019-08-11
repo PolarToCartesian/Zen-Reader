@@ -2,7 +2,8 @@ body {
     margin: 0px;
     padding: 0px;
     width: 340px;
-    height: 190px;
+    height: 265px;
+    overflow: hidden;
 }
 
 header, footer {
@@ -81,4 +82,24 @@ footer {
     text-align: center;
     font-weight: bolder !important;
     font-size: 20px;
+}
+
+section#color > input[type="color"], section#color > button#colorReset {
+    width: 25%;
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    height: 40px;
+    border: none !important;
+}
+
+section#color > button#colorReset {
+    width: 100%;
+    color: white;
+    background-color: red;
+    font-weight: bolder !important;
+}
+
+button, input[type="color"] {
+    cursor: pointer;
 }

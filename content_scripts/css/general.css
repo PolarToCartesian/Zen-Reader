@@ -1,10 +1,3 @@
-:root {
-    --bg-color-header: rgb(57,56,62);
-    --bg-color-content: rgb(42,41,46);
-    --text-color: rgb(255, 255, 255);
-    --link-color: rgb(255, 165, 0);
-}
-
 * {
     font-style: normal !important;
     text-decoration: none !important;
@@ -30,7 +23,7 @@ input:not([type="submit"]) {
 }
 
 header, nav, footer {
-    background-color: var(--bg-color-header) !important;
+    background-color: var(--bg-color-navigation) !important;
     font-weight: bolder !important;
 }
 

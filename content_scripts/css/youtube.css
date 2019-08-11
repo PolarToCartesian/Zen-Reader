@@ -5,7 +5,7 @@ div.ytp-popup.ytp-settings-menu,
 div#masthead-container.style-scope.ytd-app,
 div#guide-inner-content.style-scope.ytd-app,
 div.ytp-chrome-top.ytp-share-button-visible {
-    background-color: var(--bg-color-header) !important;
+    background-color: var(--bg-color-navigation) !important;
 }
 
 div.ytp-scrubber-container,

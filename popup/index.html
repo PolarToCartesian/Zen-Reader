@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="../content_scripts/css/general.css">
     <script type="text/javascript" src="../other/browser_compatibility_api.js"></script>
+    <script type="text/javascript" src="../content_scripts/js/addCssVariables.Js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <title>Zen Reader Popup</title>
 </head>
@@ -17,6 +18,14 @@
             <span>Zen Reader</span> by <a href="https://github.com/PolarToCartesian/Zen-Reader">PolarToCartesian</a></span>
     </header>
     
+    <section id="color">
+        <input type="color" id="bgNavColor" title="Navigation Background Color" />
+        <input type="color" id="bgContentColor" title="Content Background Color" />
+        <input type="color" id="textColor" title="Text Color" />
+        <input type="color" id="linkColor" title="Link Color" />
+        <button id="colorReset">Reset Colors To Default</button>
+    </section>
+
     <button id="formatArticle">Format Article</button>
     
     <section id="fontSize">

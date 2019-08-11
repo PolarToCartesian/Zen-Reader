@@ -6,9 +6,9 @@ Have you ever found yourself zooming-ing to see better but you were still strain
 
 ## Download
 
-Chrome : (v1.0 out and v2.0 pending) https://chrome.google.com/webstore/detail/zen-reader/ecclcnbkjbobhdkcmlefichihefflfcj
+Chrome : (v1.0 out and v2.0 pending and v3.0 will be out after 2.0) https://chrome.google.com/webstore/detail/zen-reader/ecclcnbkjbobhdkcmlefichihefflfcj
 
-Firefox : Coming Soon
+Firefox : Cancelled (Colorpicker not working)
 
 ## Current Features
 
