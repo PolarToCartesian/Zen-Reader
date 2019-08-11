@@ -6,7 +6,7 @@ Have you ever found yourself zooming-ing to see better but you were still strain
 
 ## Download
 
-Chrome : Coming Soon (Waiting For Verification By Chrome)
+Chrome : (v1.0 out and v2.0 pending) https://chrome.google.com/webstore/detail/zen-reader/ecclcnbkjbobhdkcmlefichihefflfcj
 
 Firefox : Coming Soon
 
