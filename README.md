@@ -14,7 +14,6 @@ Firefox : Cancelled (Colorpicker not working)
 
 + "Dark Theme" on every website to increase contrast and readability
   + Navigational elements and content have different background colors
-+ Customizable color scheme
 + An adjustable font size
 + Simplistic article formatting
 + Orange links to make them distinguishable from other text

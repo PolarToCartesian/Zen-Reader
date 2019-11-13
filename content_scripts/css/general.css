@@ -3,9 +3,10 @@
     text-decoration: none !important;
 }
 
-*:not(body):not(header):not(nav):not(footer):not(input):not(button):not(a):not(svg):not(img) {
+*:not(body):not(header):not(button):not(input):not(svg):not(img):not(a) {
     color: inherit !important;
     background-color: inherit !important;
+    background: inherit !important;
 }
 
 a {

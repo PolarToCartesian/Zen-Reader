@@ -1,7 +1,9 @@
 {
-	"manifest_version": 3,
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+	"manifest_version": 2,
 	"name": "Zen Reader",
-	"version": "3",
+	"version": "3.1",
 	"author": "PolarToCartesian",
 	"description": "Zen Reader is a free and open source browser extension which makes the web more accesible.",
 	"homepage_url": "https://github.com/PolarToCartesian/Zen-Reader",
@@ -24,6 +26,9 @@
 		}, {
 			"matches": ["https://*.youtube.com/*"],
 			"css": ["content_scripts/css/youtube.css"]
+		}, {
+			"matches": ["https://github.com/*"],
+			"css": ["content_scripts/css/github.css"]
 		}
 	],
 	"background": {

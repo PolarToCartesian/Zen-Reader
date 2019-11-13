@@ -1,0 +1,33 @@
+a,
+button.btn.btn-sm.disabled.tooltipped.tooltipped-n.new-pull-request-btn
+{
+    background-color: inherit !important;
+    background: inherit !important;
+}
+
+summary.btn.btn-sm.select-menu-button.css-truncate,
+button.btn.btn-sm.disabled.tooltipped.tooltipped-n.new-pull-request-btn
+{
+    color: inherit !important;
+    border: 1px solid white;
+}
+
+div.pagehead.repohead.instapaper_ignore.readability-menu.experiment-repo-nav
+{
+    border-bottom: 2px solid white;
+}
+
+ul.pagehead-actions > li
+{
+    border: 1px solid white;
+}
+
+ul.numbers-summary > li:not(:last-child)
+{
+    border-right: 1px solid white;
+}
+
+div.d-flex.repository-lang-stats-graph > *
+{
+    display: none;
+}
