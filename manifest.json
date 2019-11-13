@@ -48,7 +48,6 @@
 		  "id": "zen@read.er"
 		}
 	},
-	"content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
 	"web_accessible_resources": [
 		"content_scripts/js/addCssVariables.js",
 		"content_scripts/js/articleFormat.js",
