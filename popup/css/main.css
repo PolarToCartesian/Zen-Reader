@@ -84,6 +84,10 @@ footer {
     font-size: 20px;
 }
 
+footer > a {
+    font-weight: bolder !important;
+}
+
 section#color > input[type="color"], section#color > button#colorReset {
     width: 25%;
     float: left;
