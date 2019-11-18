@@ -1,1 +1,0 @@
-execOnInstall(() => {openTab("https://github.com/PolarToCartesian/Zen-Reader");});

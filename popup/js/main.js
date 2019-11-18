@@ -35,17 +35,13 @@ async function updatePopup() {
 window.addEventListener("load", (event) => {
     updatePopup();
 
-    document.getElementById("formatArticle").addEventListener("click", (event) => {
-        sendMessageToCurrentTab("Format Article");
-    });
-
     document.getElementById("fontSizeMinus").addEventListener("click", (event) => { setStorageItem("fontSize", currentFontSize-1); updatePopup(); });
     document.getElementById("fontSizePlus").addEventListener("click",  (event) => { setStorageItem("fontSize", currentFontSize+1); updatePopup(); });
 
-    document.getElementById("bgNavColor").addEventListener("change",     (event) => { setStorageItem("bgColorNavigation", event.target.value); updatePopup(); });
-    document.getElementById("bgContentColor").addEventListener("change", (event) => { setStorageItem("bgColorContent", event.target.value); updatePopup(); });
-    document.getElementById("textColor").addEventListener("change",      (event) => { setStorageItem("textColor", event.target.value); updatePopup(); });
-    document.getElementById("linkColor").addEventListener("change",      (event) => { setStorageItem("linkColor", event.target.value); updatePopup(); });
+    document.getElementById("bgNavColor").addEventListener("change",     (event) => { event.preventDefault(); setStorageItem("bgColorNavigation", event.target.value); updatePopup(); });
+    document.getElementById("bgContentColor").addEventListener("change", (event) => { event.preventDefault(); setStorageItem("bgColorContent", event.target.value); updatePopup(); });
+    document.getElementById("textColor").addEventListener("change",      (event) => { event.preventDefault(); setStorageItem("textColor", event.target.value); updatePopup(); });
+    document.getElementById("linkColor").addEventListener("change",      (event) => { event.preventDefault(); setStorageItem("linkColor", event.target.value); updatePopup(); });
 
     document.getElementById("colorReset").addEventListener("click", async (event) => {
         const defaultStorage = await readFileInExtension("other/defaultStorage.json");

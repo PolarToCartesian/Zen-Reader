@@ -1,6 +1,4 @@
 {
-"update_url": "https://clients2.google.com/service/update2/crx",
-
 	"manifest_version": 2,
 	"name": "Zen Reader",
 	"version": "3.1",
@@ -13,7 +11,6 @@
 			"js": [
 				"other/browser_compatibility_api.js",
 				"content_scripts/js/addCssVariables.js",
-				"content_scripts/js/articleFormat.js",
 				"content_scripts/js/fontScale.js"
 			],
 			"css": ["content_scripts/css/general.css"]
@@ -50,14 +47,12 @@
 	},
 	"web_accessible_resources": [
 		"content_scripts/js/addCssVariables.js",
-		"content_scripts/js/articleFormat.js",
 		"content_scripts/js/fontScale.js",
 		"content_scripts/css/general.js",
 		"content_scripts/css/general.css"
 	],
 	"permissions": [
 		"activeTab",
-		"contextMenus",
 		"storage"
 	]
 }

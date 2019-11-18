@@ -1,6 +1,6 @@
 # Zen Reader
 
-"Making the web accessible to the visually impaired"
+> "Making the web accessible to the visually impaired"
 
 Have you ever found yourself zooming-ing to see better but you were still straining your eyes? If so, you know as well as I do that the web can be difficult to use if you have poor eyesight. This extension, which is works on firefox and chromium browsers attempts to resolve this issue.
 

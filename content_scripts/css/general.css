@@ -39,6 +39,6 @@ body {
 }
 
 ::placeholder { 
-    color: green !important; 
+    color: white !important; 
     text-decoration-line: underline !important; 
 }
